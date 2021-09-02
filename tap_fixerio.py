@@ -14,7 +14,7 @@ REQUIRED_CONFIG_KEYS = [
     "access_key",
 ]
 
-base_url = 'https://data.fixer.io/api/'
+base_url = 'http://data.fixer.io/api/'
 
 logger = singer.get_logger()
 session = requests.Session()
