@@ -27,21 +27,21 @@ def parse_response(r):
     return flattened
 
 # schema = {
-                "type": "object",
-                "additionalProperties": True,
-                "properties" : {
-                    "base": {
-                        "type": ["null", "string"]
-                    },
-                    "date": {
-                        "type": ["null", "string"],
-                        "format": "date-time"
-                    },
-                    "rates": {
-                        "type": ["null", "object"]
-                    }
-                }
-            }
+#                 "type": "object",
+#                 "additionalProperties": True,
+#                 "properties" : {
+#                     "base": {
+#                         "type": ["null", "string"]
+#                     },
+#                     "date": {
+#                         "type": ["null", "string"],
+#                         "format": "date-time"
+#                     },
+#                     "rates": {
+#                         "type": ["null", "object"]
+#                     }
+#                 }
+#             }
 schema = {'type': 'object',
             'properties':
             {'date': {'type': 'string',
