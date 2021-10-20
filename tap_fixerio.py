@@ -28,7 +28,7 @@ def parse_response(r):
 
 schema = {
                 "type": "object",
-                "additionalProperties": False,
+                "additionalProperties": True,
                 "properties" : {
                     "base": {
                         "type": ["null", "string"]
