@@ -53,7 +53,8 @@ def parse_response(r):
 schema = {'type': 'object',
           'properties':
           {'date': {'type': 'string',
-                    'format': 'date-time'}},
+                    'format': 'date-time'},
+          'currency': {'type': 'string'}},
           'additionalProperties': True}
 
 
