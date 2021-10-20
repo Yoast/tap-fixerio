@@ -31,7 +31,7 @@ schema = {'type': 'object',
           {'date': {'type': 'string',
                     'format': 'date-time'},
           'currency' : {'type': 'string'},
-          'amount' : {'type': 'object'},
+          'amount' : {'type': 'object'}},
           'additionalProperties': True}
 
 def giveup(error):
