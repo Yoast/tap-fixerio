@@ -54,7 +54,7 @@ schema = {'type': 'object',
           'properties':
           {'date': {'type': 'string',
                     'format': 'date-time'},
-          'currency': {'type': 'string'}},
+          'rates': {'type': 'string'}},
           'additionalProperties': True}
 
 
@@ -79,7 +79,7 @@ def request(url, params):
 
 def do_sync(base, start_date, access_key, symbols=None):
     logger.info('Replicating exchange rate data from fixer.io starting from {}'.format(start_date))
-    singer.write_schema('exchange_rate', schema, 'date', 'currency')
+    singer.write_schema('exchange_rate', schema, 'date', 'rates')
 
     state = {'start_date': start_date}
     next_date = start_date
