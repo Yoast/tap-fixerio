@@ -68,7 +68,7 @@ schema = {
             "type": "string"
         }
     },
-    "additionalProperties": true,
+    "additionalProperties": True,
     
     "key_properties": [
         "date"
