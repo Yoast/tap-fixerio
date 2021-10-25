@@ -57,27 +57,41 @@ def parse_response(r):
 #           'rates': {'type': 'string'}},
 #           'additionalProperties': True}
 
-schema = {
-    "type": "object",
+# schema = {
+#     "type": "object",
+#     "properties": {
+#         "date": {
+#             "type": "string",
+#             "format": "date-time"
+#         },
+#         "rates": {
+#             "type": "string"
+#         }
+#     },
+#     "additionalProperties": True,
+    
+#     "key_properties": [
+#         "date"
+#     ],
+#     "bookmark_properties": [
+#         "rates"
+#     ]
+# }
+
+schema = {"type": "object",
     "properties": {
         "date": {
             "type": "string",
             "format": "date-time"
         },
-        "rates": {
+        "currency": {
             "type": "string"
+        },
+        "rate": {
+            "type": "number"
         }
-    },
-    "additionalProperties": True,
-    
-    "key_properties": [
-        "date"
-    ],
-    "bookmark_properties": [
-        "rates"
-    ]
+    }
 }
-
 
 def giveup(error):
     logger.error(error.response.text)
