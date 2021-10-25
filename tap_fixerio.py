@@ -113,10 +113,10 @@ def request(url, params):
 def do_sync(base, start_date, access_key, symbols=None):
     logger.info('Replicating exchange rate data from fixer.io starting from {}'.format(start_date))
     
-    bookmark_property = "rate"
+#     bookmark_property = "rate"
     
-    singer.write_schema('exchange_rate', schema, 'date', bookmark_properties=[bookmark_property])
-    # singer.write_schema('exchange_rate', schema, 'date')
+    # singer.write_schema('exchange_rate', schema, 'date', bookmark_properties=[bookmark_property])
+    singer.write_schema('exchange_rate', schema, 'date')
     state = {'start_date': start_date}
     next_date = start_date
 
