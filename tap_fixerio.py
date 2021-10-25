@@ -21,9 +21,10 @@ session = requests.Session()
 DATE_FORMAT='%Y-%m-%d'
 
 def parse_response(r):
-    flattened = r['rate']
-    flattened['currency'] = r['currency']
+    # flattened = r['rate']
+    # flattened['currency'] = r['currency']
     # flattened[r['base']] = 1.0
+    flattened['currency'] = r['USD']
     flattened['date'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.strptime(r['date'], DATE_FORMAT))
     return flattened
 
@@ -76,8 +77,6 @@ def do_sync(base, start_date, access_key, symbols=None):
             else:
                 response = request(base_url + next_date, {'base': base, 'access_key': access_key})
             payload = response.json()
-            logger.info('Payload print:')
-            logger.info(payload)
 
             if datetime.strptime(next_date, DATE_FORMAT) > datetime.utcnow():
                 break
