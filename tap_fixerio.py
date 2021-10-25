@@ -21,7 +21,7 @@ session = requests.Session()
 DATE_FORMAT='%Y-%m-%d'
 
 def parse_response(r):
-    flattened = r['rate']
+    flattened = r['rates']
     # flattened['currency'] = r['currency']
     flattened[r['base']] = 1.0
     # flattened['rate'] = r['USD']
