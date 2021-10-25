@@ -21,62 +21,10 @@ session = requests.Session()
 DATE_FORMAT='%Y-%m-%d'
 
 def parse_response(r):
-    flattened = r['rates']
+    flattened = r['rate']
     flattened[r['base']] = 1.0
     flattened['date'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.strptime(r['date'], DATE_FORMAT))
     return flattened
-
-# schema = {
-#                 "type": "object",
-#                 "additionalProperties": True,
-#                 "properties" : {
-#                     "base": {
-#                         "type": ["null", "string"]
-#                     },
-#                     "date": {
-#                         "type": ["null", "string"],
-#                         "format": "date-time"
-#                     },
-#                     "rates": {
-#                         "type": ["null", "object"]
-#                     }
-#                 }
-#             }
-# schema = {'type': 'object',
-#             'properties':
-#             {'date': {'type': 'string',
-#                       'format': 'date-time'},
-#             'currency' : {'type': 'string'},
-#             'amount' : {'type': 'object'}},
-#             'additionalProperties': True}
-
-# schema = {'type': 'object',
-#           'properties':
-#           {'date': {'type': 'string',
-#                     'format': 'date-time'},
-#           'rates': {'type': 'string'}},
-#           'additionalProperties': True}
-
-# schema = {
-#     "type": "object",
-#     "properties": {
-#         "date": {
-#             "type": "string",
-#             "format": "date-time"
-#         },
-#         "rates": {
-#             "type": "string"
-#         }
-#     },
-#     "additionalProperties": True,
-    
-#     "key_properties": [
-#         "date"
-#     ],
-#     "bookmark_properties": [
-#         "rates"
-#     ]
-# }
 
 schema = {"type": "object",
     "properties": {
