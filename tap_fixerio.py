@@ -24,9 +24,11 @@ def parse_response(r):
     # flattened = r['rate']
     # flattened['currency'] = r['currency']
     # flattened[r['base']] = 1.0
-    flattened['rate'] = r['USD']
-    flattened['date'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.strptime(r['date'], DATE_FORMAT))
-    return flattened
+    # flattened['rate'] = r['USD']
+    # flattened['date'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.strptime(r['date'], DATE_FORMAT))
+    # return flattened
+    r['date'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.strptime(r['date'], DATE_FORMAT))
+    return r
 
 schema = {"type": "object",
     "properties": {
