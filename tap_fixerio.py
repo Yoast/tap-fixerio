@@ -76,6 +76,8 @@ def do_sync(base, start_date, access_key, symbols=None):
             else:
                 response = request(base_url + next_date, {'base': base, 'access_key': access_key})
             payload = response.json()
+            logger.info('Payload print:')
+            logger.info(payload)
 
             if datetime.strptime(next_date, DATE_FORMAT) > datetime.utcnow():
                 break
