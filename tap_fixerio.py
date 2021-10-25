@@ -81,7 +81,7 @@ def do_sync(base, start_date, access_key, symbols=None):
             elif payload.get('error'):
                 raise RuntimeError(payload['error'])
             else:
-                singer.write_records('exchange_rate', [parse_response(payload)])
+                singer.write_records('exchange_rate', payload)
                 state = {'start_date': next_date}
                 next_date = (datetime.strptime(next_date, DATE_FORMAT) + timedelta(days=1)).strftime(DATE_FORMAT)
 
