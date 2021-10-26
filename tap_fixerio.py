@@ -108,7 +108,7 @@ schema = {"type": "object",
         "BWP": {
             "type": "number"
         },
-        "BYN" {
+        "BYN": {
             "type": "number"
         },
         "BYR": {
