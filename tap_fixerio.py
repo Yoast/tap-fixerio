@@ -53,7 +53,7 @@ schema = {"type": "object",
         "AED":{
             "type": "number"
         },
-        "ALL" {
+        "ALL": {
             "type": "number"
         }
     }
