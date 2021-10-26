@@ -30,21 +30,40 @@ def parse_response(r):
     # r['date'] = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.strptime(r['date'], DATE_FORMAT))
     return flattened
 
+# schema = {"type": "object",
+#     "properties": {
+#         "date": {
+#             "type": "string",
+#             "format": "date-time"
+#         },
+#         "currency": {
+#             "type": "string"
+#         },
+#         "rate": {
+#             "type": "number"
+#         }
+#     }
+# }
 schema = {"type": "object",
     "properties": {
         "date": {
             "type": "string",
             "format": "date-time"
         },
-        "currency": {
-            "type": "string"
+        "AED":{
+            "type": "number"
         },
-        "rate": {
+        "ALL" {
             "type": "number"
         }
     }
 }
 
+"AED": 4.306972,
+    "AFN": 100.315547,
+    "ALL": 121.304908,
+    "AMD": 568.624537,
+    "ANG": 2.105993,
 def giveup(error):
     logger.error(error.response.text)
     response = error.response
