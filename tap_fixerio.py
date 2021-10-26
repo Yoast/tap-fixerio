@@ -59,11 +59,6 @@ schema = {"type": "object",
     }
 }
 
-"AED": 4.306972,
-    "AFN": 100.315547,
-    "ALL": 121.304908,
-    "AMD": 568.624537,
-    "ANG": 2.105993,
 def giveup(error):
     logger.error(error.response.text)
     response = error.response
