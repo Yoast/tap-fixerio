@@ -99,9 +99,9 @@ schema = {"type": "object",
         "BSD": {
             "type": "number"
         },
-        "BTC": {
-            "type": "number"
-        },
+#         "BTC": {
+#             "type": "number"
+#         },
         "BTN": {
             "type": "number"
         },
